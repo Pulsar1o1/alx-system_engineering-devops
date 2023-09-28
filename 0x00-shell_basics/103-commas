@@ -1,2 +1,2 @@
 #!/bin/bash
-result=""; for item in *; do [ -d "$item" ] && result+="$item/, " || { result+="$item, "; }; done; result=$(echo "$result" | sed 's/, $/\n/'); echo -e "$result"
+ls -ap | tr '\n' ',' | sed 's/,$/\n/'
