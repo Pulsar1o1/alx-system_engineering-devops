@@ -1,3 +1,2 @@
 #!/bin/bash
-
-for item in * .*/; do echo -n "$(basename "$item"), "; done | sed 's/,$/\n/'
+echo $(ls -Ap | grep -E -v '/$' | sort -d) $(ls -Ap | grep '/$' | sort -d) | sed 's/ /\//g'
