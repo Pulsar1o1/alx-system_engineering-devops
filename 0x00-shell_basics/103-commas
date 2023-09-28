@@ -1,13 +1,2 @@
 #!/bin/bash
-
-result=""
-for item in *; do
-    if [ -d "$item" ]; then
-        result+="$item/, "
-    else
-        result+="$item, "
-    fi
-done
-
-result=$(echo "$result" | sed 's/, $/\n/')
-echo -e "$result"
+result=""; for item in *; do [ -d "$item" ] && result+="$item/, " || result+="$item, "; done; result=$(echo "$result" | sed 's/, $/\n/'); echo -e "$result"
