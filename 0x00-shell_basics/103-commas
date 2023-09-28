@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(ls -Ap | grep -E -v '/$' | sort -d) $(ls -Ap | grep '/$' | sort -d) | sed 's/ /\//g'
+ls -ap | grep -E -v "/$" | tr '\n' ',' | sed 's/,$/\n/; s/,\.\.//; s/,\.$/,/''
