@@ -1,2 +1,4 @@
 #!/bin/bash
-cd ~
+
+# Go back to the previous directory
+cd -
