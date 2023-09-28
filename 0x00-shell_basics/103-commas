@@ -1,2 +1,13 @@
-#!bin/bash
-ls -Ap | sort -d | awk '{printf "%s, ", $0}' | sed 's/,$/\n/'
+#!/bin/bash
+
+result=""
+for item in *; do
+    if [ -d "$item" ]; then
+        result+="$item/, "
+    else
+        result+="$item, "
+    fi
+done
+
+result=$(echo "$result" | sed 's/, $/\n/')
+echo -e "$result"
