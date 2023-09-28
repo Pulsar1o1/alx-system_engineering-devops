@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -maxdepth 1 -type d -name '[0-9A-Za-z]*' -printf '%f/, ' -o -type f -name '[0-9A-Za-z]*' -printf '%f, ' | sed 's/, $/\n/'
+ls -Ap | awk '{ ORS = (NR % 2 == 0) ? "\n" : ", " } 1' | sed 's/,$/\n/'
