@@ -1,2 +1,2 @@
 #!/bin/bash
-IFS=':' read -ra PATH_ARRAY <<< "$PATH" && echo "${#PATH_ARRAY[@]}"
+echo $(($(echo $PATH | grep -o ":/" | wc -l) + 1))
