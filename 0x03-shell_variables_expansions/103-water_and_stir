@@ -1,0 +1,5 @@
+#!/bin/bash
+WATER="$WATER"
+STIR="$STIR"
+result_bestchol=$(printf "%x" $((0x$WATER + 0x$STIR)))
+echo "$result_bestchol"
